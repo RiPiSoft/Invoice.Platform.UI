@@ -1,0 +1,67 @@
+#https://dev.to/obinnaogbonnajoseph/circle-ci-test-configuration-for-angular-projects-1o2p#configure
+
+version: 2.1
+orbs:
+  browser-tools: circleci/browser-tools@1.2.3
+
+references:
+  workspace_root: &workspace_root "~"
+  attach_workspace: &attach_workspace
+    attach_workspace:
+      at: *workspace_root
+executors:
+  node-executor:
+    docker:
+      - image: circleci/node:14.17.6-browsers
+jobs:
+  Build:
+    #working_directory: ~/ng-project
+    executor: node-executor
+    steps:
+      - *attach_workspace
+      - checkout
+      - run:
+          name: Show current branch
+          command: echo ${CIRCLE_BRANCH}
+      - restore_cache:
+          keys:
+          - v1-dependencies-{{ checksum "package-lock.json" }}
+          - v1-dependencies-
+      - run: 
+          name: Install local dependencies
+          command: npm install
+      - save_cache:
+          paths:
+            - node_modules
+          key: v1-dependencies-{{ checksum "package-lock.json" }}
+      - persist_to_workspace:
+          root: *workspace_root
+          paths: .
+  Linting:
+    executor: node-executor
+    steps:
+      - *attach_workspace
+      - run: 
+          name: Linting
+          command: npm run lint
+  Test:
+    executor: node-executor
+    steps:
+      - *attach_workspace
+      - run: 
+          name: Testing
+          command: npm run test -- --no-watch --no-progress --browsers=ChromeHeadlessCI
+      - run: 
+          name: End to End Test
+          command: npm run e2e -- --protractor-config=e2e/protractor-ci.conf.js
+workflows:
+  version: 2
+  build-and-test-development:
+    jobs:
+      - Build
+      - Linting:
+          requires:
+            - Build
+      - Test:
+          requires:
+            - Build

@@ -428,5 +428,3 @@ Thumbs.db
 **/TESTS-*.xml
 .scannerwork
 sonar-project.properties
-
-package-lock.json
