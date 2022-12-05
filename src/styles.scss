@@ -1,1 +1,17 @@
-/* You can add global styles to this file, and also import other style files */
+@import "/src/assets/style/variables";
+
+body{
+    margin: 0;
+}
+
+header,
+footer {
+    color: $white;
+    background-color: $teal-green
+}
+
+footer {
+    position: fixed;
+    bottom: 0px;
+    width: 100%;
+}
