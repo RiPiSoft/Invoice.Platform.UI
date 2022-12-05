@@ -23,7 +23,7 @@
           "error",
           {
             "type": "attribute",
-            "prefix": "app",
+            "prefix": "inv",
             "style": "camelCase"
           }
         ],
@@ -31,10 +31,13 @@
           "error",
           {
             "type": "element",
-            "prefix": "app",
+            "prefix": "inv",
             "style": "kebab-case"
           }
-        ]
+        ],
+        "no-empty-function": "off",
+        "@typescript-eslint/no-empty-function": "off",
+        "@angular-eslint/no-empty-lifecycle-method": "off"
       }
     },
     {
