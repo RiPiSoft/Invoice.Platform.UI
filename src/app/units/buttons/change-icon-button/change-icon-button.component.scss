@@ -1,0 +1,10 @@
+@import "/src/assets/style/variables";
+
+button[mat-icon-button]{
+    background-color: transparent;
+    border: 0;
+}
+
+button[mat-icon-button] > mat-icon{
+    vertical-align: middle;
+}

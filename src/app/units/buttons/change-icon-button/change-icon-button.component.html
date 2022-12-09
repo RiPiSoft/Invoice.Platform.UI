@@ -1,0 +1,4 @@
+<button mat-icon-button (click)="toggle.emit()">
+    <mat-icon *ngIf="condition">{{primaryIcon}}</mat-icon>
+    <mat-icon *ngIf="!condition">{{secondaryIcon}}</mat-icon>
+</button>

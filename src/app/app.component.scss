@@ -1,0 +1,21 @@
+@import "/src/assets/style/variables";
+
+mat-drawer-container {
+    height: calc(100vh - 80px);
+    background-color: transparent;
+}
+
+mat-drawer{
+    color: $white;
+    background-color: $teal-green;
+}
+
+mat-toolbar{
+    background-color:  transparent;
+    font: inherit;
+    height: auto;
+}
+
+mat-divider {
+    border-top-color: $white;
+}
