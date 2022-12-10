@@ -1,3 +1,4 @@
+export * from './home/home.component'
 export * from './invoice/invoice.component';
 export * from './estimate/estimate.component';
 export * from './history/history.component';

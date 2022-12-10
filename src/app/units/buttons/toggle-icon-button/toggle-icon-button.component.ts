@@ -1,11 +1,11 @@
 import { Component, EventEmitter, Input, OnInit, Output } from '@angular/core';
 
 @Component({
-  selector: 'inv-change-icon-button',
-  templateUrl: './change-icon-button.component.html',
-  styleUrls: ['./change-icon-button.component.scss']
+  selector: 'inv-toggle-icon-button',
+  templateUrl: './toggle-icon-button.component.html',
+  styleUrls: ['./toggle-icon-button.component.scss']
 })
-export class ChangeIconButtonComponent implements OnInit {
+export class ToggleIconButtonComponent implements OnInit {
 
   @Input() primaryIcon: string;
   @Input() secondaryIcon: string;

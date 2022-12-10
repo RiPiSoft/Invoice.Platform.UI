@@ -1,20 +1,21 @@
 <div class="container-fluid p-0">
     <inv-header></inv-header>
     <mat-toolbar class="p-2">
-        <inv-change-icon-button primaryIcon="close" secondaryIcon="menu" [condition]="drawer.opened" (toggle)="drawer.toggle()"></inv-change-icon-button>
+        <inv-toggle-icon-button primaryIcon="close" secondaryIcon="menu" [condition]="drawer.opened" (toggle)="drawer.toggle()"></inv-toggle-icon-button>
+        <!-- <inv-default-icon-button class="flex-end" icon="person"></inv-default-icon-button> -->
     </mat-toolbar>
     <mat-drawer-container autosize>
         <mat-drawer #drawer mode="side" opened>
           <div class="p-3">
             <!-- https://www.angularjswiki.com/angular/angular-material-icons-list-mat-icon-list/ -->
-            <div><inv-default-icon-button title="Create Invoice" icon="developer_board"></inv-default-icon-button></div> <!-- Omitting the brackets will render the string "file_open", not the value of file_open. for more info: https://docs.angular.lat/guide/property-binding -->
-            <div><inv-default-icon-button title="Create Estimate" icon="style"></inv-default-icon-button></div>
-            <div><inv-default-icon-button title="Create Sales Receipt" icon="receipt"></inv-default-icon-button></div>
+            <div><inv-default-icon-button title="Create Invoice" icon="developer_board" color="white"></inv-default-icon-button></div> <!-- Omitting the brackets will render the string "file_open", not the value of file_open. for more info: https://docs.angular.lat/guide/property-binding -->
+            <div><inv-default-icon-button title="Create Estimate" icon="style" color="white"></inv-default-icon-button></div>
+            <div><inv-default-icon-button title="Create Sales Receipt" icon="receipt" color="white"></inv-default-icon-button></div>
             <mat-divider class="mt-2 mb-2"></mat-divider>
-            <div><inv-default-icon-button title="History" icon="history"></inv-default-icon-button></div>
-            <div><inv-default-icon-button title="Reminder" icon="add_alarm"></inv-default-icon-button></div>
+            <div><inv-default-icon-button title="History" icon="history" color="white"></inv-default-icon-button></div>
+            <div><inv-default-icon-button title="Reminder" icon="add_alarm" color="white"></inv-default-icon-button></div>
             <mat-divider class="mt-2 mb-2"></mat-divider>
-            <div><inv-default-icon-button title="Statistics" icon="bar_chart"></inv-default-icon-button></div>
+            <div><inv-default-icon-button title="Statistics" icon="bar_chart" color="white"></inv-default-icon-button></div>
           </div>
         </mat-drawer>
         <mat-drawer-content>

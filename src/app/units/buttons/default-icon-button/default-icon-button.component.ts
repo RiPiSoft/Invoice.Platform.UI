@@ -8,6 +8,7 @@ import { Component, Input, OnInit } from '@angular/core';
 export class DefaultIconButtonComponent implements OnInit {
   @Input() title: string;
   @Input() icon: string;
+  @Input() color: string;
   constructor() { }
 
   public ngOnInit(): void {

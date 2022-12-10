@@ -5,6 +5,11 @@ import * as areas  from './core/areas'
 const routes: Routes = 
 [
   {
+    path: "",
+    component: areas.HomeComponent,
+    children: []
+  },
+  {
     path: "invoice",
     component: areas.InvoiceComponent,
     children: []
