@@ -1,4 +1,4 @@
-import { Component, Input, OnInit } from '@angular/core';
+import { Component, EventEmitter, Input, OnInit, Output } from '@angular/core';
 
 @Component({
   selector: 'inv-default-icon-button',
@@ -9,13 +9,15 @@ export class DefaultIconButtonComponent implements OnInit {
   @Input() title: string;
   @Input() icon: string;
   @Input() color: string;
+  @Output() onLoadEvent = new EventEmitter<string>();
+  
   constructor() { }
 
   public ngOnInit(): void {
 
   }
 
-  public event(): void{
-    console.log("here we go !!!")
+  public onLoad(): void{
+    this.onLoadEvent.emit();
   }
 }

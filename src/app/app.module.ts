@@ -23,6 +23,7 @@ import { FormsModule } from '@angular/forms';
 import { MatInputModule } from '@angular/material/input';
 import { MatFormFieldModule } from '@angular/material/form-field';
 import { SearchFieldComponent } from './units/fields/search-field/search-field.component';
+import { NavigationService } from './core/services'
 
 @NgModule({
   declarations: [
@@ -53,7 +54,7 @@ import { SearchFieldComponent } from './units/fields/search-field/search-field.c
     MatInputModule,
     MatFormFieldModule
   ],
-  providers: [],
+  providers: [NavigationService],
   bootstrap: [AppComponent],
   schemas: [ CUSTOM_ELEMENTS_SCHEMA ]
 })
