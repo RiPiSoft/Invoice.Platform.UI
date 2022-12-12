@@ -9,7 +9,7 @@ export class DefaultIconButtonComponent implements OnInit {
   @Input() title: string;
   @Input() icon: string;
   @Input() color: string;
-  @Output() onLoadEvent = new EventEmitter<string>();
+  @Output() clickEvent = new EventEmitter<string>();
   
   constructor() { }
 
@@ -17,7 +17,7 @@ export class DefaultIconButtonComponent implements OnInit {
 
   }
 
-  public onLoad(): void{
-    this.onLoadEvent.emit();
+  public event(): void{
+    this.clickEvent.emit();
   }
 }

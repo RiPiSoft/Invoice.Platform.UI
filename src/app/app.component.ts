@@ -19,7 +19,7 @@ export class AppComponent implements OnInit, AfterViewInit  {
 
   public ngOnInit(): void { }
   
-  public onLoad(data: string): void{
+  public clickEvent(data: string): void{
     this.router.navigate([data]);
   }
 
