@@ -2,7 +2,21 @@
     <inv-header></inv-header>
     <mat-toolbar class="p-2">
         <inv-toggle-icon-button primaryIcon="close" secondaryIcon="menu" [condition]="drawer.opened" (toggle)="drawer.toggle()"></inv-toggle-icon-button>
+        
+        <inv-search-field class="ms-auto me-auto"></inv-search-field>
+
+        <inv-default-icon-button class="flex-end" icon="person"></inv-default-icon-button>
         <!-- <inv-default-icon-button class="flex-end" icon="person"></inv-default-icon-button> -->
+        <!-- <div class="container-fluid p-0">
+          <div class="row">
+            <div class="col-auto">
+              <inv-toggle-icon-button primaryIcon="close" secondaryIcon="menu" [condition]="drawer.opened" (toggle)="drawer.toggle()"></inv-toggle-icon-button>
+            </div>
+            <div class="col-auto ms-auto">
+              <inv-default-icon-button class="flex-end" icon="person"></inv-default-icon-button>
+            </div>
+          </div>
+        </div> -->
     </mat-toolbar>
     <mat-drawer-container autosize>
         <mat-drawer #drawer mode="side" opened>
@@ -19,7 +33,7 @@
           </div>
         </mat-drawer>
         <mat-drawer-content>
-            <router-outlet></router-outlet>
+          <router-outlet></router-outlet>
         </mat-drawer-content>
     </mat-drawer-container>
     <inv-footer></inv-footer>

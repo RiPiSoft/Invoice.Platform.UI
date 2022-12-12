@@ -19,6 +19,10 @@ import { ReminderComponent } from './core/areas/reminder/reminder.component';
 import { StatisticsComponent } from './core/areas/statistics/statistics.component';
 import { PageNotFoundComponent } from './core/areas/page-not-found/page-not-found.component';
 import { HomeComponent } from './core/areas/home/home.component';
+import { FormsModule } from '@angular/forms';
+import { MatInputModule } from '@angular/material/input';
+import { MatFormFieldModule } from '@angular/material/form-field';
+import { SearchFieldComponent } from './units/fields/search-field/search-field.component';
 
 @NgModule({
   declarations: [
@@ -34,16 +38,20 @@ import { HomeComponent } from './core/areas/home/home.component';
     ReminderComponent,
     StatisticsComponent,
     PageNotFoundComponent,
-    HomeComponent
+    HomeComponent,
+    SearchFieldComponent
   ],
   imports: [
     BrowserModule,
+    FormsModule,
     AppRoutingModule,
     BrowserAnimationsModule,
     MatSidenavModule,
     MatIconModule,
     MatDividerModule,
-    MatToolbarModule
+    MatToolbarModule,
+    MatInputModule,
+    MatFormFieldModule
   ],
   providers: [],
   bootstrap: [AppComponent],

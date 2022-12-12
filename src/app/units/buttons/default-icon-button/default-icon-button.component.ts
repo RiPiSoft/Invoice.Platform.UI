@@ -12,6 +12,7 @@ export class DefaultIconButtonComponent implements OnInit {
   constructor() { }
 
   public ngOnInit(): void {
+
   }
 
   public event(): void{
